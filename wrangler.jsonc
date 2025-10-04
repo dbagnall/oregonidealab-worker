@@ -18,8 +18,8 @@
   "d1_databases": [
     {
       "binding": "D1",
-      "database_id": "07e3e9f9-a208-4e97-a509-33182fa6cbad",
-      "database_name": "oregonidealab-d1",
+      "database_id": "7c62ba30-fa03-4d1b-8143-04d2fa1ed6fb",
+      "database_name": "oregonidealab-prod",
       "remote": true,
     },
   ],
@@ -33,7 +33,7 @@
   "r2_buckets": [
     {
       "binding": "R2",
-      "bucket_name": "oregonidealab-r2",
+      "bucket_name": "oregonidealab-worker-r2",
     },
     // Create a R2 binding with the binding name "NEXT_INC_CACHE_R2_BUCKET"
     // {
