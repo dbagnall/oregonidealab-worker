@@ -17,12 +17,16 @@ const nextConfig = {
       webpackConfig.externals = []
     }
 
+    const requiredExternals = ['wrangler', 'sqlite']
+
     if (Array.isArray(webpackConfig.externals)) {
-      if (!webpackConfig.externals.includes('wrangler')) {
-        webpackConfig.externals.push('wrangler')
+      for (const external of requiredExternals) {
+        if (!webpackConfig.externals.includes(external)) {
+          webpackConfig.externals.push(external)
+        }
       }
     } else {
-      webpackConfig.externals = [webpackConfig.externals, 'wrangler']
+      webpackConfig.externals = [webpackConfig.externals, ...requiredExternals]
     }
 
     webpackConfig.resolve.extensionAlias = {
