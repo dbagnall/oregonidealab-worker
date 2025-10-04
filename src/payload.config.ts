@@ -91,7 +91,7 @@ async function resolveCloudflareContext(): Promise<CloudflareContext> {
 
 async function tryGetCloudflareContextFromWrangler(): Promise<CloudflareContext | null> {
   try {
-    const { getPlatformProxy } = await import('wrangler')
+    const { getPlatformProxy } = await import(`${'__wrangler'.replaceAll('_', '')}`)
     return getPlatformProxy({
       environment: process.env.CLOUDFLARE_ENV,
       experimental: { remoteBindings: cloudflareRemoteBindings },
